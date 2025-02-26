@@ -68,47 +68,52 @@ const PatientList = () => {
             Add Patient
           </button>
         </div>
-        <div className="flex mt-10">
-          <div className="w-full flex justify-between items-center bg-gray-900 rounded-md px-5 py-1">
-            <div className="flex gap-1">
+        <div className="flex flex-col md:flex-row md:items-center mt-10 gap-3">
+          <div className="w-full flex flex-col sm:flex-row md:justify-between items-center bg-gray-900 rounded-md px-5 py-1 gap-3">
+           <div className="flex gap-2 ">
+           <div className="flex gap-1">
               <p className="text-white">Sort:</p>
               <select
                 name="sort"
                 className="outline-none rounded-md bg-gray-700 text-white text-xs"
                 onChange={(e) => handleSort(e.target.value)}
               >
-                <option>Age by ascending</option>
-                <option>Age by decending</option>
+                <option>...choose...</option>
+                <option>Age by asc</option>
+                <option>Age by dec</option>
                 <option>Date</option>
                 <option>Name</option>
               </select>
             </div>
-            <input
-              // {...register("name")}
-              className="border outline-none w-[40%] border-blue-800 rounded px-2 h-8"
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Search..."
-              onInput={(e) => handleSearch(e.target.value)}
-            />
             <div className="flex gap-1 ">
               <p className="text-white">Filter:</p>
               <select
                 onChange={(e) => hanleFilter(e.target.value)}
                 className="outline-none rounded-md bg-gray-700 text-white text-xs"
               >
+                <option>...choose...</option>
                 <option>Male</option>
                 <option>Female</option>
                 <option>Below 18</option>
               </select>
             </div>
+           </div>
+            <input
+              // {...register("name")}
+              className="border outline-none w-[90%] md:w-[40%] border-blue-800 rounded px-2 h-8"
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Search..."
+              onInput={(e) => handleSearch(e.target.value)}
+            />
+            
             <button
               onClick={() => setSearchedPatientdata(patientdata)}
-              className="text-white text-xl bg-gray-700 px-3 pb-1 rounded-full"
+              className="text-white text-sm bg-gray-700 px-3 pb-1 rounded-full"
               title="clear"
             >
-              x
+              Clear
             </button>
           </div>
         </div>

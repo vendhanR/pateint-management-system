@@ -150,7 +150,7 @@ const Calendar = () => {
                 ?.filter((data) => isSameDay(data.appointmentDate, day))
                 ?.map((data, index) => (
                   <div
-                    className="text-xs bg-green-600  mx-1 rounded-2xl px-1 mb-5 text-white"
+                    className="truncate text-xs bg-green-600  mx-1 rounded-2xl px-1 mb-5 text-white text-clip"
                     key={`data.date${index}`}
                   >
                     {data.patientName}
